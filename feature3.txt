@@ -1,0 +1,16 @@
+1. Setting Up a CI/CD Pipeline 
+2. Securing the CI/CD Pipeline 
+
+For a spring boot application
+Stages:
+1.Checkout code
+2.Sonar Analyse
+3.Mvn tests and build
+4.Dockerize
+5.Scan docker image
+6.Create manifests using helm and values file
+7.Deploy
+8.BDD
+9.If previous stages are successfull then promotes to next environment
+
+

@@ -1,0 +1,7 @@
+1. Version Control Workflow 
+2. GitHub Actions: Automated CI 
+
+We can use Git Trunk strategy 
+Once a developer raiser a PR to develop branch,
+ we can have build validations setup in such a way that it trigger sth CI piepline
+  and check the sonarqube and runs the test case and check build is succefull or not

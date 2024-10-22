@@ -1,0 +1,22 @@
+# 1. Dockerizing an Application 
+
+FROM alpine as baseImage
+COPY . . 
+RUN mvn clean install
+
+FROM alpine 
+COPY --from=baseImage *.jar   // COPY executable file from build image, syntax issue
+EXPOSE 8080
+ENTRYPOINT [ "java","-jar","jarname.jar" ]
+
+# 2. Monitoring Dockerized Application 
+
+We use kuberentes hpa - horiontal pod auto scaling will scale apploication based on using CPU utilization and memory utilization
+
+hpa: 
+    enabled: true
+    minReplicas: 2
+    maxReplicas:10
+    targetCpuUtiliaztion: 70
+    targetMemoryUtiliaztion: 80
+    
